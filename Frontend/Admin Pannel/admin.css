@@ -1,0 +1,205 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: sans-serif,'Times New Roman', Times, serif;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    background-color: RGB(59, 73, 126);
+    height: 100vh;
+}
+.logo__home{
+    padding: 20px;
+    border-bottom: 1px solid rgba(220, 220, 220, 0.167);
+}
+.sidebar__main-part{
+    padding: 20px 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+.main span, .web__apps span, .pages span, .general span{
+    opacity: 0.5;
+    font-size: 12px;
+    padding: 20px 0 20px 20px;
+}
+.main details, .web__apps details, .pages details, .general details{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    opacity: 0.7;
+    gap: 10px;
+}
+.main details summary{
+    list-style: none;
+    display: flex;
+    padding: 10px 20px 10px 20px;
+    background-color: RGBA(255, 255, 255, 0.1);
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    gap: 10px;
+    align-items: center;
+
+    &:hover{
+        opacity: 1;
+    }
+}
+.web__apps details summary, .pages details summary, .general details summary{
+    list-style: none;
+    display: flex;
+    padding: 10px 20px 10px 20px;
+    /* background-color: RGBA(255, 255, 255, 0.1); */
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    gap: 10px;
+    align-items: center;
+
+    &:hover{
+        background-color: RGBA(255, 255, 255, 0.1);
+    }
+}
+.sidebar__main-part details summary i{
+    margin-left: auto;
+}
+.sidebar__main-part details option{
+    text-align: start;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &:hover{
+        opacity: 1;
+    }
+}
+
+
+/* main */
+
+nav{
+    height: 80px;
+    width: calc(100vw - 256px);
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.search{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+.search input{
+    padding: 10px 40px 10px 10px;
+    border-radius: 10px;
+    border: none;
+    width: 300px;
+
+    &:focus{
+        outline: none;
+    }
+}
+.search__icon{
+    position: absolute;
+    left: 315px;
+}
+.profile__side{
+    display: flex;
+    gap: 10px;
+}
+.profile__side span{
+    padding: 10px;
+    height: inherit;
+    border-left: 1px solid gainsboro;
+    cursor: pointer;
+}
+.profile__side span i{
+    font-size: 18px;
+    color: rgb(185, 185, 185);
+}
+.info__container{
+    background-color: RGBA(0, 0, 0, 0);
+    height: calc(100vh - 80px);
+    width: calc(100vw - 256px);
+}
+.user__info{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.user__name h1{
+    font-weight: 400;
+    font-size: 20px;
+}
+.user__name p{
+    opacity: 0.5;
+    font-size: 14px;
+}
+.user__info div button{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.chart__activity-info{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    height: calc(100vh - 160px);
+    width: calc(100vw - 256px);
+}
+.visual__info{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+.cards{
+    height: 110px;
+    display: flex;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.cards span{
+    padding: 10px;
+    height: fit-content;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.cards div p{
+    font-size: 14px;
+    opacity: 0.8;
+}
+.cards div h1{
+    padding: 10px 0;
+    font-weight: 500;
+    font-size: 25px;
+}
+.cards div span{
+    font-size: 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 5px;
+    padding: 0 0 10px 0;
+}
+.cards div span p{
+    font-size: 12px;
+}
