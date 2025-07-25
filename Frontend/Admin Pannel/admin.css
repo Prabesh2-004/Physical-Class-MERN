@@ -16,6 +16,8 @@ body{
     flex-direction: column;
     background-color: RGB(59, 73, 126);
     height: 100vh;
+    position: sticky;
+    top: 0;
 }
 .logo__home{
     padding: 20px;
@@ -30,7 +32,7 @@ body{
     color: white;
     overflow-y: auto;
     overflow-x: hidden;
-    scrollbar-width: thin; /* For Firefox */
+    scrollbar-width: thin; 
     scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 .main span, .web__apps span, .pages span, .general span{
@@ -40,7 +42,6 @@ body{
 }
 .main details, .web__apps details, .pages details, .general details{
     display: flex;
-    /* align-items: center; */
     flex-direction: column;
     opacity: 0.7;
     gap: 10px;
@@ -63,7 +64,6 @@ body{
     list-style: none;
     display: flex;
     padding: 10px 20px 10px 20px;
-    /* background-color: RGBA(255, 255, 255, 0.1); */
     border-radius: 0 50px 50px 0;
     cursor: pointer;
     gap: 10px;
@@ -92,7 +92,6 @@ body{
 nav{
     height: 80px;
     width: calc(100vw - 256px);
-    /* background-color: green; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -108,6 +107,7 @@ nav{
 .search input{
     padding: 10px 40px 10px 10px;
     border-radius: 10px;
+    background-color: rgba(230, 230, 230, 0.478);
     border: none;
     width: 300px;
 
@@ -160,7 +160,7 @@ nav{
 }
 .chart__activity-info{
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3fr 320px;
     height: calc(100vh - 160px);
     width: calc(100vw - 256px);
 }
@@ -202,4 +202,128 @@ nav{
 }
 .cards div span p{
     font-size: 12px;
+}
+.login__info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 20px 20px 0;
+}
+.login__info span{
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.login__info span h2{
+    font-weight: 600;
+    font-size: 20px;
+}
+.login__info span p{
+    font-size: 13px;
+    font-weight: 400;
+}
+.login__info span a{
+    color: RGB(3, 181, 98);
+    font-size: 14px;
+    position: absolute;
+    bottom: 20px;
+}
+.login__info span a i{
+    font-size: 12px;
+    margin-left: 5px;
+}
+.login__info img{
+    height: 150px;
+    position: absolute;
+    right: 10px;
+}
+.pro__info{
+    display: flex;
+    height: 190px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px dotted RGB(3, 181, 98);
+    position: relative;
+    right: 0;
+}
+.browser__activity{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.browser__activity div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.browser__activity div h3{
+    font-weight: 500;
+    padding: 10px;
+    font-size: 18px;
+}
+.browser__activity div a{
+    opacity: 0.5;
+    font-size: 12px;
+    font-weight: 400;
+    color: gray;
+}
+.browser__info{
+    display: flex;
+    overflow: auto;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+.browser__info div{
+    display: flex;
+    flex-direction: column;
+}
+.session p, .bouncerate p{
+    padding: 10px;
+    width: 150px;
+    /* border-bottom: 1px solid rgba(210, 210, 210, 0.437);     */
+}
+.browser img{
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+.browser{
+    width: 150px;
+    position: relative; 
+}
+.company{
+    padding: 10px 30px;
+    /* border-bottom: 1px solid rgba(210, 210, 210, 0.437); */
+}
+.revenue{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    /* margin: 20px; */
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+}
+.sales__revenue{
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    border-radius: 10px;
+
+}
+.sales__revenue img{
+    height: 400px;
+    width: 600px;
+}
+.visitor__by-device{
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    border-radius: 10px;
+}
+.visitor__by-device img{
+    height: 400px;
+    width: 300px;
 }
