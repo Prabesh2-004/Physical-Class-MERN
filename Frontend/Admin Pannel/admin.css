@@ -9,19 +9,24 @@ body{
 }
 .container{
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 256px 5fr;
+    height: 100vh;
 }
 .sidebar{
     display: flex;
     flex-direction: column;
+    width: 256px;
     background-color: RGB(59, 73, 126);
     height: 100vh;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    z-index: 100;
 }
 .logo__home{
     padding: 20px;
     border-bottom: 1px solid rgba(220, 220, 220, 0.167);
+    flex-shrink: 0;
 }
 .sidebar__main-part{
     padding: 20px 20px 20px 0;
@@ -34,6 +39,8 @@ body{
     overflow-x: hidden;
     scrollbar-width: thin; 
     scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    flex:1;
+    height: calc(100vh - 80px);
 }
 .main span, .web__apps span, .pages span, .general span{
     opacity: 0.5;
@@ -55,10 +62,9 @@ body{
     cursor: pointer;
     gap: 10px;
     align-items: center;
-
-    &:hover{
-        opacity: 1;
-    }
+}
+.main details summary:hover{
+    opacity: 1;
 }
 .web__apps details summary, .pages details summary, .general details summary{
     list-style: none;
@@ -68,35 +74,44 @@ body{
     cursor: pointer;
     gap: 10px;
     align-items: center;
-
-    &:hover{
-        background-color: RGBA(255, 255, 255, 0.1);
-    }
 }
-.sidebar__main-part details summary i{
-    margin-left: auto;
+.web__apps details summary:hover, .pages details summary:hover, .general details summary:hover{
+    background-color: RGBA(255, 255, 255, 0.1);
 }
-.sidebar__main-part details option{
+.menu-item{
     text-align: start;
     padding: 10px 20px;
     cursor: pointer;
-
-    &:hover{
-        opacity: 1;
-    }
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 0 50px 50px 0;
+}
+.menu-item:hover{
+    opacity: 1;
+    background-color: RGBA(255, 255, 255, 0.1);
 }
 
 
 /* main */
-
+.main__container{
+    width: calc(100vw - 256px);
+    min-height: 100vh;
+    margin-left: 256px;
+    overflow-y: auto;
+}
 nav{
     height: 80px;
-    width: calc(100vw - 256px);
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 .search{
     display: flex;
@@ -117,7 +132,7 @@ nav{
 }
 .search__icon{
     position: absolute;
-    left: 315px;
+    right: 10px;
 }
 .profile__side{
     display: flex;
@@ -134,14 +149,15 @@ nav{
     color: rgb(185, 185, 185);
 }
 .info__container{
-    background-color: RGBA(0, 0, 0, 0);
-    height: calc(100vh - 80px);
-    width: calc(100vw - 256px);
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 80px);
+    width: 100%;
 }
 .user__info{
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    /* background-color: white; */
 }
 .user__name h1{
     font-weight: 400;
@@ -157,18 +173,24 @@ nav{
     border: none;
     color: white;
     cursor: pointer;
+    margin-left: 5px;
 }
 .chart__activity-info{
     display: grid;
-    grid-template-columns: 3fr 320px;
-    height: calc(100vh - 160px);
-    width: calc(100vw - 256px);
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    padding: 20px;
+    min-height: calc(100vh - 160px);
+}
+.stock__information{
+    display: flex;
+    flex-direction: column;
 }
 .visual__info{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    padding: 20px;
+    padding: 20px 0;
 }
 .cards{
     height: 110px;
@@ -176,6 +198,7 @@ nav{
     padding: 16px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: white;
 }
 .cards span{
     padding: 10px;
@@ -201,13 +224,12 @@ nav{
     padding: 0 0 10px 0;
 }
 .cards div span p{
-    font-size: 12px;
+    font-size: 11px;
 }
 .login__info{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px 20px 20px 0;
 }
 .login__info span{
     width: 150px;
@@ -228,16 +250,19 @@ nav{
     font-size: 14px;
     position: absolute;
     bottom: 20px;
+    text-decoration: none;
 }
 .login__info span a i{
     font-size: 12px;
     margin-left: 5px;
 }
+
 .login__info img{
     height: 150px;
     position: absolute;
     right: 10px;
 }
+
 .pro__info{
     display: flex;
     height: 190px;
@@ -246,84 +271,177 @@ nav{
     border-radius: 10px;
     border: 1px dotted RGB(3, 181, 98);
     position: relative;
-    right: 0;
+    background-color: white;
 }
+
 .browser__activity{
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    background-color: white;
 }
-.browser__activity div{
+
+.browser__activity > div:first-child{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 15px;
 }
+
 .browser__activity div h3{
     font-weight: 500;
-    padding: 10px;
     font-size: 18px;
 }
+
 .browser__activity div a{
     opacity: 0.5;
     font-size: 12px;
     font-weight: 400;
     color: gray;
+    text-decoration: none;
 }
+
 .browser__info{
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
     scrollbar-width: thin;
     scroll-behavior: smooth;
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
 }
-.browser__info div{
+
+.browser__info > div{
     display: flex;
     flex-direction: column;
 }
+
 .session p, .bouncerate p{
     padding: 10px;
     width: 150px;
-    /* border-bottom: 1px solid rgba(210, 210, 210, 0.437);     */
+    font-size: 14px;
 }
+
 .browser img{
     height: 20px;
     position: absolute;
     left: 0;
-    top: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }
+
 .browser{
     width: 150px;
-    position: relative; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 40px;
 }
+
 .company{
     padding: 10px 30px;
-    /* border-bottom: 1px solid rgba(210, 210, 210, 0.437); */
+    font-size: 14px;
 }
 .revenue{
     display: flex;
-    padding: 20px;
-    justify-content: space-between;
-    /* margin: 20px; */
-    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+    gap: 20px;
 }
+
 .sales__revenue{
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: fit-content;
     height: fit-content;
     border-radius: 10px;
-
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 .sales__revenue img{
-    height: 400px;
-    width: 600px;
-}
-.visitor__by-device{
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    height: fit-content;
+    width: 570px;
     border-radius: 10px;
 }
+.visitor__by-device{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
 .visitor__by-device img{
-    height: 400px;
     width: 300px;
+    border-radius: 10px;
+}
+
+/* Custom Scrollbar for Webkit browsers */
+.sidebar__main-part::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar__main-part::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar__main-part::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.sidebar__main-part::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .chart__activity-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .visual__info {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .main__container {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .search input {
+        width: 200px;
+    }
+    
+    .visual__info {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .visual__info {
+        grid-template-columns: 1fr;
+    }
+    
+    .user__info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .user__info div {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+    
+    nav {
+        padding: 0 10px;
+    }
+    
+    .search input {
+        width: 150px;
+    }
 }
