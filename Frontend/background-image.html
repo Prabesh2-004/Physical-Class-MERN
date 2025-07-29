@@ -76,7 +76,7 @@
             display: flex;
         }
         .search input{
-            padding: 12px 40px 12px 80px;
+            padding: 12px 40px 12px 70px;
             border-radius: 10px;
             border: none;
             width: inherit;
@@ -100,23 +100,27 @@
         }
         .main-container{
             padding: 20px;
-            column-count: 4;
-            column-gap: 20px;
+            column-count: 5;
+            column-gap: 10px;
             column-fill: balance;
         }
 
-        .main-container img{
+        .images{
             width: 100%;
             height: auto;
             border-radius: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             break-inside: avoid;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            opacity: 0;
+            transition: 600ms ease;
+        }
+        .images.show{
+            opacity: 1;
+            translate: 0;
         }
 
-        .main-container img:hover{
-            transform: translateY(-5px);
+        .images:hover{
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         .info{
@@ -132,7 +136,16 @@
         }
         .info button{
             border: 1px solid;
-            cursor: pointer;        }
+            cursor: pointer;        
+        }
+        .random{
+            position: absolute;
+            right: 0;
+            color: white;
+        }
+        /* .random{
+            float: right;
+        } */
         @media (max-width: 1200px) {
             .main-container {
                 column-count: 3;
@@ -187,6 +200,9 @@
                     </div>
                 </div>
             </div>
+            <div class="random">
+                <p>Random</p>
+            </div>
         </div>
     </div>
     <div class="info">
@@ -194,23 +210,49 @@
         <button>Trending</button>
     </div>
     <div class="main-container">
-        <img src="https://images.pexels.com/photos/19677930/pexels-photo-19677930/free-photo-of-catrina-pintando-con-luz.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/photos/27204149/pexels-photo-27204149/free-photo-of-a-view-of-the-ocean-and-mountains-from-a-cliff.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/photos/33014938/pexels-photo-33014938/free-photo-of-woman-by-street-food-cart-in-city-setting.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/photos/32026822/pexels-photo-32026822/free-photo-of-two-friends-relaxing-in-a-sunny-park-setting.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/videos/33042347/sevimliligiylebuyuleyenkizilpandaadorableredpandacloseup-kizil-pandanin-yakin-plan-sevimliligi-bu-33042347.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/photos/2450308/pexels-photo-2450308.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/videos/16984745/pexels-photo-16984745.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/videos/3177845/free-video-3177845.jpg?auto=compress&cs=tinysrgb&w=600&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/photos/32934635/pexels-photo-32934635/free-photo-of-serene-african-grey-parrot-resting-in-cage.jpeg?auto=compress&cs=tinysrgb&w=600&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/photos/33034898/pexels-photo-33034898/free-photo-of-serene-flamingos-in-shallow-blue-waters.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="alt">
-        <img src="https://images.pexels.com/photos/20214291/pexels-photo-20214291/free-photo-of-woman-in-traditional-clothing-posing-next-to-river.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/photos/32480606/pexels-photo-32480606/free-photo-of-three-goats-grazing-in-sunny-meadow.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/videos/5664700/4k-video-autumn-drone-drone-footage-5664700.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/photos/31508494/pexels-photo-31508494/free-photo-of-woman-in-coat-posing-outdoors-in-overcast-weather.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/photos/33003165/pexels-photo-33003165/free-photo-of-herd-of-fallow-deer-grazing-in-slovenian-meadow.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/photos/32987318/pexels-photo-32987318/free-photo-of-thrilling-freestyle-motocross-action-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
-        <img src="https://images.pexels.com/videos/32730662/book-cozy-indoor-peaceful-32730662.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img src="https://i.pinimg.com/474x/9f/a1/78/9fa178f6bc03480b7eb3f7ca865ec561.jpg" alt="img" class="images">
+        <img src="https://images.pexels.com/photos/31384621/pexels-photo-31384621/free-photo-of-woman-using-smartphone-on-tokyo-subway-train.jpeg?auto=compress&cs=tinysrgb&w=600" alt="img" class="images">
+        <img src="https://i.pinimg.com/474x/c9/92/18/c99218b6facf82e5391c996f82f9068e.jpg" alt="img" class="images">
+        <img src="https://i.pinimg.com/474x/9c/68/34/9c68342607cd71ef0a7f0061f2de78c1.jpg" alt="img" class="images">
+        <img src="https://i.pinimg.com/474x/a3/79/65/a379652696973de2dea3dfe2bb466076.jpg" alt="img" class="images">
+        <img src="https://i.pinimg.com/736x/9e/63/da/9e63dab2b4ff64db30baa84517b351d4.jpg" alt="img" class="images">
+        <img src="https://images.pexels.com/photos/5591515/pexels-photo-5591515.jpeg?auto=compress&cs=tinysrgb&w=600" alt="img" class="images">
+        <img src="https://images.pexels.com/photos/15829722/pexels-photo-15829722/free-photo-of-barrels-of-sake-outside-the-hokusetsu-sake-brewery.jpeg?auto=compress&cs=tinysrgb&w=600" alt="img" class="images">
+        <img src="https://i.pinimg.com/474x/6b/e3/5d/6be35d40358a120e3cc9c44321e389e3.jpg" alt="img" class="images">
+        <img src="https://images.pexels.com/photos/1717928/pexels-photo-1717928.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="img" class="images">
+        <img src="https://i.pinimg.com/474x/a0/5f/a0/a05fa02becd5d46ee073918389bf8158.jpg" alt="img" class="images">
+        <img src="https://images.pexels.com/photos/32715939/pexels-photo-32715939/free-photo-of-aerial-view-of-historic-urban-skyscraper.jpeg?auto=compress&cs=tinysrgb&w=600&loading=lazy" alt="img" class="images">
+        <img class="images" src="https://images.pexels.com/photos/19677930/pexels-photo-19677930/free-photo-of-catrina-pintando-con-luz.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/photos/27204149/pexels-photo-27204149/free-photo-of-a-view-of-the-ocean-and-mountains-from-a-cliff.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/photos/33014938/pexels-photo-33014938/free-photo-of-woman-by-street-food-cart-in-city-setting.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/photos/32026822/pexels-photo-32026822/free-photo-of-two-friends-relaxing-in-a-sunny-park-setting.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/videos/33042347/sevimliligiylebuyuleyenkizilpandaadorableredpandacloseup-kizil-pandanin-yakin-plan-sevimliligi-bu-33042347.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/photos/2450308/pexels-photo-2450308.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/videos/16984745/pexels-photo-16984745.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/videos/3177845/free-video-3177845.jpg?auto=compress&cs=tinysrgb&w=600&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/photos/32934635/pexels-photo-32934635/free-photo-of-serene-african-grey-parrot-resting-in-cage.jpeg?auto=compress&cs=tinysrgb&w=600&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/photos/33034898/pexels-photo-33034898/free-photo-of-serene-flamingos-in-shallow-blue-waters.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="alt">
+        <img class="images" src="https://images.pexels.com/photos/20214291/pexels-photo-20214291/free-photo-of-woman-in-traditional-clothing-posing-next-to-river.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/photos/32480606/pexels-photo-32480606/free-photo-of-three-goats-grazing-in-sunny-meadow.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/videos/5664700/4k-video-autumn-drone-drone-footage-5664700.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/photos/31508494/pexels-photo-31508494/free-photo-of-woman-in-coat-posing-outdoors-in-overcast-weather.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/photos/33003165/pexels-photo-33003165/free-photo-of-herd-of-fallow-deer-grazing-in-slovenian-meadow.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/photos/32987318/pexels-photo-32987318/free-photo-of-thrilling-freestyle-motocross-action-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
+        <img class="images" src="https://images.pexels.com/videos/32730662/book-cozy-indoor-peaceful-32730662.jpeg?auto=compress&cs=tinysrgb&w=1200&loading=lazy" alt="img">
     </div>
+    <script>
+        const observer = new IntersectionObserver((entries)=>{
+            entries.forEach((entry)=>{
+                if(entry.isIntersecting){
+                    console.log(entry.target);
+                    entry.target.classList.add("show")
+                }else{
+                    entry.target.classList.remove("show")
+                }
+            })
+        } ,{})
+        const images = document.querySelectorAll(".images");
+        images.forEach(img => observer.observe(img));
+    </script>
 </body>
 </html>
