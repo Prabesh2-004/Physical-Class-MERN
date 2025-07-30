@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .halo{
+            height: 250px;
+            position: absolute;
+            left: 130px;
+            z-index: -1;
+            animation: rotates 7s linear 0s infinite;
+        }
+        @keyframes rotates {
+            0%{
+                transform: rotate(0deg);
+            }
+            10%{
+                transform: rotate(36deg);
+            }
+            20%{
+                transform: rotate(72deg);
+            }
+            30%{
+                transform: rotate(108deg);
+            }
+            40%{
+                transform: rotate(144deg);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            60%{
+                transform: rotate(216deg);
+            }
+            70%{
+                transform: rotate(252deg);
+            }
+            80%{
+                transform: rotate(288deg);
+            }
+            90%{
+                transform: rotate(324deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        .food{
+            height: 500px;
+            animation: foods 30s linear 0s infinite;
+        }
+        @keyframes foods {
+            0%{
+                transform: rotate(0deg);
+            }
+            10%{
+                transform: rotate(36deg);
+            }
+            20%{
+                transform: rotate(72deg);
+            }
+            30%{
+                transform: rotate(108deg);
+            }
+            40%{
+                transform: rotate(144deg);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            60%{
+                transform: rotate(216deg);
+            }
+            70%{
+                transform: rotate(252deg);
+            }
+            80%{
+                transform: rotate(288deg);
+            }
+            90%{
+                transform: rotate(324deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        .progress-bar{
+            /* padding: 15px; */
+            height: 20px;
+            width: 300px;
+            background-color: rgb(237, 237, 237);
+            border-radius: 50px;
+        }
+        .progress{
+            height: 100%;
+            border-radius: 50px;
+            background-color: green;
+            animation: progresses 2s linear infinite alternate;
+        }
+        @keyframes progresses {
+            0%{
+                width: 0%;
+            }
+            10%{
+                width: 10%;
+            }
+            20%{
+                width: 20%;
+            }
+            30%{
+                width: 30%;
+            }
+            40%{
+                width: 40%;
+            }
+            50%{
+                width: 50%;
+            }
+            60%{
+                width: 60%;
+            }
+            70%{
+                width: 70%;
+            }
+            80%{
+                width: 80%;
+            }
+            90%{
+                width: 90%;
+            }
+            100%{
+                width: 100%;
+            }
+        }
+        .loading{
+            width: 100px;
+            height: 100px;
+            border: 10px solid gainsboro;
+            border-top: 10px solid blue;
+            border-radius: 50%;
+            animation: loading 5s linear infinite;
+        }
+        @keyframes loading {
+            0%{
+                transform: rotate(0deg);
+            }
+            10%{
+                transform: rotate(36deg);
+            }
+            20%{
+                transform: rotate(72deg);
+            }
+            30%{
+                transform: rotate(108deg);
+            }
+            40%{
+                transform: rotate(144deg);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            60%{
+                transform: rotate(216deg);
+            }
+            70%{
+                transform: rotate(252deg);
+            }
+            80%{
+                transform: rotate(288deg);
+            }
+            90%{
+                transform: rotate(324deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="img/buddha.png" alt="buddha" class="buddha">
+        <img src="img/halo.png" alt="halo" class="halo">
+    </div>
+    <div>
+        <img src="img/hero.png" alt="food" class="food">
+    </div>
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+    <div class="loading"></div>
+</body>
+</html>
